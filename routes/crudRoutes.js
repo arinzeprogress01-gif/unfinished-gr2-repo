@@ -5,14 +5,14 @@ import studentsList from '../stu-list-db.js';
 const router = express.Router();
 
 router.get("/studentsList", (req, res) => {
-    res.send(studentsList);
+    res.status(200).json(studentsList);
 });
 
 router.get("/studentsList/:id", (req, res) => {
     const student = studentsList.find(s => s.id === parseInt(req.params.id));
     if (!student)
         return res.status(404).json({"Error": "NOT ON THE LIST"});
-    res.status(200).send(student);
+    res.status(200).json(student);
 });
 
 router.post("/studentsList", (req, res) => {
