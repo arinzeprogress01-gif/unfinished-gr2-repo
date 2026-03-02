@@ -60,7 +60,7 @@ router.put("/api/studentList/:id", (req, res) => {
 router.delete("/api/studentList/:id", (req, res) => {
     const id = Number(req.params.id);
 
-    const studentExists = studentsList.some(s => s.id === id);
+    const index = studentsList.findIndex(student => student.id === id);
 
     if (!studentExists) {
         return res.status(404).json({ error: "Student not found" });
