@@ -1,3 +1,7 @@
+process.on("uncaughtException", (err) => {
+    console.error("UNCAUGHT ERROR:", err);
+});
+
 import express from "express";
 
 import dotenv from "dotenv";
