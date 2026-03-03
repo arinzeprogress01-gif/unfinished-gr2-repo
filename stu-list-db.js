@@ -8,3 +8,5 @@ let studentsList = [
 ];
 
 export default studentsList;
+
+/*export default means that this module (file) will export the studentsList variable as the default export. This allows other files to import this list of students using an import statement without needing to specify a named export. For example, another file could import this list using: import studentsList from './stu-list-db.js';*/
