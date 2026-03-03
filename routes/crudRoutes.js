@@ -10,8 +10,6 @@ router.get("/studentsList", (req, res) => {
 }); 
 
 
-
-
 router.get("/studentsList/:id", (req, res) => {
     const student = studentsList.find(s => s.id === parseInt(req.params.id));
     if (!student)
@@ -37,7 +35,6 @@ router.patch("/studentsList/:id", (req, res) => {
     const id = parseInt(req.params.id);
 
     const student = studentsList.find(student => student.id === id);
-
     if (!student) {
         return res.status(404).json({ error: "Student not found" });
     }
